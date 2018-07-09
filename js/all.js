@@ -24,6 +24,7 @@ function readURL(){
             reader.readAsDataURL(this.files[i]);    
         }
     }
+    input.value = "";
 }
 function checkDelete(e){
     if(e.target.nodeName == "A" && e.target.className == "delete"){
