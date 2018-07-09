@@ -48,7 +48,10 @@ img:nth-child(1) {
     margin-bottom: 5%;
 }
 .delete {
-    padding: 0 11px 0 11px;
+    margin: 0 auto;
+    display: block;
+    width: 46px;
+    height: 46px;
     text-decoration:none;
     color: #fff;
     text-align: center;
