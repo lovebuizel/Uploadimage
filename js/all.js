@@ -5,6 +5,7 @@ var div = document.querySelector('.div');
 var body = document.querySelector('body');
 var gotop = document.querySelector('#go-top');
 var deleteAll = document.querySelector('.icon-cancel');
+//繪製圖片
 function update(){
     var str = "";
     for(i=0;i<ary.length;i++){
@@ -12,6 +13,7 @@ function update(){
     }
     div.innerHTML = str;
 }
+//新增檔案
 function readURL(){
     if(this.files && this.files[0]){
         for(i=0;i < this.files.length;i++){
@@ -26,6 +28,7 @@ function readURL(){
     }
     input.value = "";
 }
+//刪除檔案
 function checkDelete(e){
     if(e.target.nodeName == "A" && e.target.className == "delete"){
         e.preventDefault();
@@ -34,6 +37,7 @@ function checkDelete(e){
         localStorage.setItem("img", JSON.stringify(ary));
     }
 }
+//刪除全部檔案
 function checkDeleteAll(){
     if(confirm("確定要清除全部?")){
         ary = [];
@@ -46,10 +50,12 @@ function checkDeleteAll(){
 input.addEventListener('change',readURL,false);
 body.addEventListener('click',checkDelete,false);
 deleteAll.addEventListener('click',checkDeleteAll,false);
+//回到頂端
 $(document).ready(function(){
     gotop.addEventListener('click',function(e){
         e.preventDefault();
         $("html,body").stop().animate({"scrollTop":"0"},"slow");
     },false);
 });
+//初始化
 update();
